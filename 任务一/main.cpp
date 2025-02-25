@@ -3,6 +3,8 @@
 
 RecTangle::RecTangle(double width,double height)
 {
+    if(width < 0||height < 0)
+        throw -1;
     this->width = width;
     this->height = height;
 }
@@ -25,6 +27,8 @@ RecTangle RecTangle::operator=(const RecTangle& other)
 
 double RecTangle::area()
 {
+    if(height < 0||width < 0)
+        throw -1;
     double ans = 0.0;
     ans = this->height * this->width;
     return ans;
@@ -32,6 +36,8 @@ double RecTangle::area()
 
 void RecTangle::resize(double scale)
 {
+    if(this->height < 0||this->width < 0||scale <= 0)
+        throw -1;
     this->height *= scale;
     this->width *= scale;
 }
