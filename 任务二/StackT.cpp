@@ -1,5 +1,5 @@
 #include<iostream>
-#include<vector>
+#include<vector>//应该可以用吧（）
 using namespace std;
 
 template<typename T>
@@ -36,7 +36,19 @@ class Stack{
             if(this->length > 0)
                 this->stack.pop_back();
             else
-                thorw()
+                thorw -1;
         }
-
+        T top()
+        {
+            if(this->length)
+                throw -1;
+            return this->stack.back();
+        }
+        bool isEmpty()
+        {
+            if(this->length > 0)
+                return true;
+            else 
+                return false;
+        }
 };
