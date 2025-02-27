@@ -1,3 +1,5 @@
+//没有做选做的功能
+
 #include<iostream>
 #include<vector>//应该可以用吧（）
 using namespace std;
