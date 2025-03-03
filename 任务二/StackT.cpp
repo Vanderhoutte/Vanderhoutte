@@ -21,7 +21,7 @@ class Stack{
             this->length = other.length;
             for(i = 0;i < other.length;i++)
             {
-                this->stack.push_back(other.stack(i))
+                this->stack.push_back(other.stack[i])
             }
         }
         firend int size()
@@ -38,7 +38,7 @@ class Stack{
             if(this->length > 0)
                 this->stack.pop_back();
             else
-                thorw -1;
+                throw -1;
         }
         T top()
         {
@@ -48,7 +48,7 @@ class Stack{
         }
         bool isEmpty()
         {
-            if(this->length > 0)
+            if(this->length == 0)
                 return true;
             else 
                 return false;
