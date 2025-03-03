@@ -17,11 +17,11 @@ class ThreadSafeQueue{
 
         ThreadSafeQueue(const ThreadSafeQueue& other)//拷贝构造函数
         {
-            lock_guard<mutex>lock(ohter.mutex_status);
+            lock_guard<mutex>lock(other.mutex_status);
             this->data = ohter.data;
         }
 
-        ThreadSafeQueue operator=(const ThreadSafeQueue& ohter) = delet;
+        ThreadSafeQueue& operator=(const ThreadSafeQueue& ohter) = delete;
 
         void push(T value)//进队
         {
@@ -33,7 +33,7 @@ class ThreadSafeQueue{
         bool pop(T &value)//出队
         {
             lock_guard<mutex>lock(this->mutex_status);
-            ThreadSafeQueue.wait(mutex_status,[this]{return !data.empty()});
+            this->status.wait(lock,[this]{return !data.empty()});
             value = move(this->data.front());
             this->data.pop();
         }
